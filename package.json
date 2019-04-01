@@ -1,6 +1,6 @@
 {
     "name": "ns-androidx-migrate",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Migrates NativeScript projects and plugins to androidx",
     "main": "index.js",
     "bin": {
