@@ -1,0 +1,15 @@
+
+npm-debug.log
+lerna-debug.log
+.DS_Store
+
+hooks/*
+node_modules/
+platforms/
+tmp/
+typings/
+
+.idea
+.cloud
+.project
+.vscode
