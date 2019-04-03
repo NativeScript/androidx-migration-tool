@@ -12,10 +12,10 @@ How to use:
       This operation may take a few minutes to execute (depends on your project structure size).
 
 Examples:
-    `ns-androidx-migrate test-plugin` - search and replace test-plugin folder for all default file types
-    `ns-androidx-migrate test-plugin [js]` - search and replace test-plugin folder for all default files except `.js` ones.
-    `ns-androidx-migrate test-plugin [ts,java]` - search and replace test-plugin folder for all default files except `.ts` and `.java` ones.
-    Consider passing comma separated extensions with no `.` or whitespaces between them.
+   1.   `ns-androidx-migrate test-plugin` - search and replace test-plugin folder for all default file types
+   2.   `ns-androidx-migrate test-plugin [js]` - search and replace test-plugin folder for all default files except `.js` ones.
+   3.   `ns-androidx-migrate test-plugin [ts,java]` - search and replace test-plugin folder for all default files except `.ts` and `.java` ones.
+      Consider passing comma separated extensions with no `.` or whitespaces between them.
     
 
 This tool does not migrate any 3rd party packages or plugins that your project relies on. 
