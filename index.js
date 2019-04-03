@@ -8,7 +8,8 @@ const path = require("path");
 
 const classesFile = 'classes.txt';
 const artifactsFile = 'artifacts.txt';
-const searchInFileTypes = '(.java|.js|.ts|.xml|.gradle)$';
+let searchExtensions = ['java', 'js', 'ts', 'xml', 'gradle'];
+let searchInFileTypes;
 let artifactsSuggestionsCount = 0;
 let namespacesChangesCount = 0;
 
@@ -89,6 +90,11 @@ function migrateAndroidXNamespaces(classes, pluginDir) {
     });
 }
 
+function extensionsToSearch(excludeExtensions) {
+    searchExtensions = searchExtensions.filter((el) => !excludeExtensions.includes(el));
+    searchExtensions.forEach((ext) => ext = `.${ext}`);
+    return `(${searchExtensions.join('|')})$`;
+}
 
 function suggestAndroidXArtifacts(artifacts, pluginDir) {
     return new Promise(function (resolveOuter) {
@@ -145,8 +151,13 @@ function suggestAndroidXArtifacts(artifacts, pluginDir) {
 }
 
 ///RUN WITH: npm run migrate nativescript-ui-listview
+///RUN WITH (if global):ns-androidx-migrate nativescript-ui-listview
+
 let pluginDir = process.argv[2];
 pluginDir = path.resolve(pluginDir);
+
+let excludeExtensions = process.argv[3] && process.argv[3].match(/([a-zA-Z]+)/g);
+searchInFileTypes = extensionsToSearch(excludeExtensions || []);
 
 console.log("Search and Replace in:" + pluginDir);
 
