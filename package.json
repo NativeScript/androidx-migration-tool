@@ -11,7 +11,11 @@
         "migrate": "node --max-old-space-size=4096 index.js"
     },
     "author": "AlexanderDjenkov",
+    "bugs": {
+        "url": "https://github.com/NativeScript/androidx-migration-tool/issues"
+    },
     "license": "Apache-2.0",
+    "homepage": "https://github.com/NativeScript/androidx-migration-tool",
     "dependencies": {
         "find-in-files": "^0.5.0",
         "replace-in-file": "^3.4.4"
